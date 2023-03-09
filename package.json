@@ -1,0 +1,24 @@
+{
+  "name": "leo-daisy-wedding",
+  "version": "1.0.0",
+  "description": "",
+
+  "scripts": {
+    "start": "parcel serve --open chrome index.html --dist-dir main",
+    "build": "parcel build --dist-dir main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo12534/leo-daisy-wedding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leo12534/leo-daisy-wedding/issues"
+  },
+  "homepage": "https://github.com/leo12534/leo-daisy-wedding#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}

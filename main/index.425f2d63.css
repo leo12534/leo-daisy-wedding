@@ -1,0 +1,72 @@
+nav {
+  width: 100%;
+  display: flex;
+}
+
+nav > .nav__section {
+  border: 1px solid red;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+#nav__logo-section {
+  flex-basis: 20%;
+}
+
+#nav__link-section {
+  flex-grow: 1;
+  justify-content: flex-end;
+  gap: 5rem;
+}
+
+main {
+  flex-grow: 1;
+  grid-template-rows: 1fr min-content min-content min-content;
+  grid-template-areas: "hero"
+                       "hero-gap"
+                       "images"
+                       "content";
+  row-gap: 5em;
+  display: grid;
+}
+
+#main__hero {
+  background-color: var(--site-green-300);
+  grid-area: hero / 1 / hero-gap / 1;
+}
+
+#main__hero-images {
+  grid-area: hero-gap / 1 / images / 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+  column-gap: 1em;
+  display: grid;
+  overflow: hidden;
+}
+
+.main__hero-picture {
+  aspect-ratio: 8 / 9;
+  width: 100%;
+  max-width: 500px;
+  background-color: red;
+  border-radius: 1.5em;
+  padding: .3em;
+}
+
+[class^="main__hero-img-"] {
+  aspect-ratio: 8 / 9;
+  object-fit: cover;
+  border-radius: 1.5em;
+}
+
+#main__content {
+  grid-area: content / 1 / content / 1;
+}
+
+footer {
+  background-color: var(--site-peach-color);
+  padding: 2em 0;
+}
+
+/*# sourceMappingURL=index.425f2d63.css.map */

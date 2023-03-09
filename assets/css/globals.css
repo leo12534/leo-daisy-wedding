@@ -1,0 +1,37 @@
+:root {
+  --ff-logo: 'Alegreya SC', serif;
+  --ff-heading: 'Playfair Display', serif;
+  --ff-body: 'Montserrat', sans-serif;
+  /* Green Shades */
+  --site-green-color: 170, 82%;
+  --site-green-l: 100%;
+  --site-green-100: hsl(var(--site-green-color), calc(var(--site-green-l) - 20%));
+  --site-green-300: hsl(var(--site-green-color), calc(var(--site-green-l) - 40%));
+  --site-green-500: hsl(var(--site-green-color), calc(var(--site-green-l) - 52%));
+  --site-green-700: hsl(var(--site-green-color), calc(var(--site-green-l) - 74%));
+  --site-green-900: hsl(var(--site-green-color), calc(var(--site-green-l) - 95%));
+  /* Yellow Shades */
+  --site-yellow-color: hsl(56, 100%, 69%);
+  /* Blue */
+  --site-blue-color: hsl(219,
+      100%,
+      51%);
+  /* Peach */
+  --site-peach-color: hsl(12,
+      100%,
+      82%);
+}
+
+body {
+  background-color: var(--site-yellow-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0px;
+  /* overflow: hidden; */
+  font-family: var(--ff-body);
+}
+
+a {
+  text-decoration: none;
+}
