@@ -9,18 +9,52 @@
   --site-green-500: hsl(var(--site-green-color), calc(var(--site-green-l)  - 52%));
   --site-green-700: hsl(var(--site-green-color), calc(var(--site-green-l)  - 74%));
   --site-green-900: hsl(var(--site-green-color), calc(var(--site-green-l)  - 95%));
-  --site-yellow-color: #fff461;
+  --site-yellow-color: 56, 100%;
+  --site-yellow-l: 100%;
+  --site-yellow-100: hsl(var(--site-yellow-color), calc(var(--site-yellow-l)  - 20%));
+  --site-yellow-300: hsl(var(--site-yellow-color), calc(var(--site-yellow-l)  - 31%));
+  --site-yellow-500: hsl(var(--site-yellow-color), calc(var(--site-yellow-l)  - 50%));
+  --site-yellow-700: hsl(var(--site-yellow-color), calc(var(--site-yellow-l)  - 55%));
   --site-blue-color: #055dff;
   --site-peach-color: #ffb6a3;
 }
 
-body {
-  background-color: var(--site-yellow-color);
-  height: 100vh;
-  font-family: var(--ff-body);
-  flex-direction: column;
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  display: flex;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-heading);
+}
+
+#root, #__next {
+  isolation: isolate;
 }
 
 a {
