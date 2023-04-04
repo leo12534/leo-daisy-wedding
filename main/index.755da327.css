@@ -19,6 +19,14 @@
   --site-peach-color: #ffb6a3;
 }
 
+.invis {
+  visibility: hidden;
+}
+
+.vis {
+  visibility: visible;
+}
+
 *, :before, :after {
   box-sizing: border-box;
 }

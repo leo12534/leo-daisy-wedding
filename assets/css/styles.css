@@ -32,7 +32,7 @@
   width: 80px;
   margin-bottom: 0;
   margin: 0 auto;
-
+  filter: drop-shadow(-10px 20px 8px var(--site-green-700));
 }
 
 .ring-dots {
@@ -143,7 +143,7 @@
   max-width: 450px;
   position: relative;
   margin-left: -1em;
-  background-image: url('/assets/img/stained-glass-1.jpeg');
+  background-image: url('./../img/stained-glass-1.jpeg');
   background-position: center center;
   background-size: 800px 800px;
 }
@@ -160,7 +160,7 @@
 .main__hero-picture:nth-child(2) {
   background-color: orange;
   padding: 0em;
-  background-image: url('/assets/img/stained-glass-1.jpeg');
+  background-image: url('./../img/stained-glass-1.jpeg');
   background-size: 150px 150px;
   background-position: top right;
 }
@@ -170,7 +170,7 @@
   align-self: start;
   justify-self: end;
   max-width: 410px;
-  background-image: url('/assets/img/stained-glass-1.jpeg');
+  background-image: url('./../img/stained-glass-1.jpeg');
   background-size: 400px 400px;
 }
 

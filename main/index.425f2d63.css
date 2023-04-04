@@ -27,6 +27,7 @@
 
 .ring__svg {
   width: 80px;
+  filter: drop-shadow(-10px 20px 8px var(--site-green-700));
   margin: 0 auto;
 }
 

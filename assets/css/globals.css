@@ -28,7 +28,13 @@
       82%);
 }
 
+.invis {
+  visibility: hidden;
+}
 
+.vis {
+  visibility: visible;
+}
 
 /*
   1. Use a more-intuitive box-sizing model.
