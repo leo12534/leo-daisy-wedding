@@ -45,7 +45,7 @@ nav {
 
 main {
   flex-grow: 1;
-  grid-template-rows: clamp(32.5vh, 25vw, 350px) max-content min-content min-content;
+  grid-template-rows: clamp(35vh, 25vw, 350px) max-content min-content min-content;
   grid-template-areas: "hero"
                        "hero-gap"
                        "images"
