@@ -89,7 +89,7 @@
 .hero__venue {
   text-shadow: 2px 1px 0px var(--site-green-100);
   font-weight: 500;
-  font-size: clamp(.85em, 2.5vw, 1rem);
+  font-size: clamp(.7em, 2.5vw, 1rem);
   color: var(--site-green-900);
 }
 
