@@ -86,7 +86,7 @@
   fill: var(--site-yellow-300);
   text-align: center;
   text-shadow: 2px 3px 0px var(--site-green-900);
-  font-size: clamp(2em, 6vw, 5rem);
+  font-size: clamp(1.9em, 6vw, 5rem);
   font-weight: 900;
   line-height: 1em;
   top: -1.5em;
