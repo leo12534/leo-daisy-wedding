@@ -84,7 +84,6 @@ panelSlideIn
 ScrollTrigger.create({
   trigger: ".intro__trigger",
   start: "-85% top",
-  markers:true,
   end: "300px bottom",
   onEnter: () => {
     panelSlideIn.play();
