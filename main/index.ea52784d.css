@@ -3,8 +3,15 @@ body {
   height: 100vh;
   font-family: var(--ff-body);
   flex-direction: column;
+  animation: .3s linear .3s both fade-in;
   display: flex;
   overflow-x: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 [class^="section__"] {

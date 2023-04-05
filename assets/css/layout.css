@@ -4,7 +4,15 @@ body {
   flex-direction: column;
   height: 100vh;
   font-family: var(--ff-body);
-  overflow-x: hidden
+  overflow-x: hidden;
+  /*  */
+  animation: fade-in .3s linear .3s both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 [class^='section__'] {

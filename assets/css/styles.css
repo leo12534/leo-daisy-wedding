@@ -29,10 +29,11 @@
 
 /* SVGs Styling */
 .ring__svg {
+
   width: 80px;
-  margin-bottom: 0;
+  filter: drop-shadow(2px 1px 2px var(--site-green-700));
   margin: 0 auto;
-  filter: drop-shadow(-10px 20px 8px var(--site-green-700));
+  stroke: var(--site-yellow-500);
 }
 
 .ring-dots {
