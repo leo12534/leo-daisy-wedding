@@ -29,8 +29,7 @@
 
 /* SVGs Styling */
 .ring__svg {
-
-  width: 80px;
+  width: 65px;
   filter: drop-shadow(2px 1px 2px var(--site-green-700));
   margin: 0 auto;
   stroke: var(--site-yellow-500);
@@ -76,7 +75,7 @@
   text-shadow: 2px 4px 0px var(--site-green-700);
   font-family: var(--ff-logo);
   letter-spacing: 1px;
-  font-size: clamp(3.75em, 6vw, 7rem);
+  font-size: clamp(3em, 6vw, 7rem);
   line-height: .85em;
 }
 
@@ -265,6 +264,9 @@
 }
 
 @media (min-width: 768px) {
+  .ring__svg {
+    width: 80px;
+  }
 
   .std__svg {
     width: 100px;

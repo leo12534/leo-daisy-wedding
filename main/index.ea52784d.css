@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: var(--site-yellow-300);
   height: 100vh;
@@ -57,9 +61,15 @@ main {
 #main__hero-images {
   grid-area: hero-gap / 1 / images / 1;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  place-items: flex-end center;
   column-gap: 1em;
   display: grid;
+}
+
+@media (min-width: 768px) {
+  #main__hero-images {
+    align-items: center;
+  }
 }
 
 #main__content {
