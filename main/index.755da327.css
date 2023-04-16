@@ -2,6 +2,10 @@
   --ff-logo: "Alegreya SC", serif;
   --ff-heading: "Playfair Display", serif;
   --ff-body: "Montserrat", sans-serif;
+  --border-after-left: -.4em;
+  --border-after-top: -.45em;
+  --border-before-left: -.8em;
+  --border-before-top: -.9em;
   --site-green-color: 170, 82%;
   --site-green-l: 100%;
   --site-green-100: hsl(var(--site-green-color), calc(var(--site-green-l)  - 20%));
@@ -19,14 +23,6 @@
   --site-peach-color: #ffb6a3;
 }
 
-.invis {
-  visibility: hidden;
-}
-
-.vis {
-  visibility: visible;
-}
-
 *, :before, :after {
   box-sizing: border-box;
 }
@@ -37,6 +33,7 @@
 
 html, body {
   height: 100%;
+  will-change: transform;
 }
 
 body {

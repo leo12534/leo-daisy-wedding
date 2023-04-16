@@ -1,3 +1,7 @@
+body {}
+
+
+
 /* Logo Styling */
 .navbar-brand {
   font-family: var(--ff-logo);
@@ -20,6 +24,12 @@
 
 .navbar-nav li a.active {
   color: var(--site-green-900) !important;
+}
+
+#hero__wrapper {
+  background: var(--site-green-500);
+  background: linear-gradient(0deg, var(--site-yellow-300) 28%, var(--site-green-700) 28%, var(--site-green-500) 28.3%);
+  visibility: hidden;
 }
 
 /* Hero Styling */
@@ -114,26 +124,26 @@
 
 /* Hero Images Styling */
 .main__hero-picture,
-[class^='main__hero-img-'] {
+.main__hero-img {
   aspect-ratio: 11/12;
   border-radius: 1.5em;
   object-fit: cover;
+  object-position: center center;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
 }
 
 .main__hero-picture {
   background-color: var(--site-green-700);
-
+  background-image: url('./../img/stained-glass-3.jpeg');
   width: 100%;
   max-width: 500px;
   box-shadow: rgb(193, 193, 39) 0px 20px 30px -10px;
   border: 2px solid var(--site-green-900);
   background-blend-mode: hard-light;
-  transition: all .5s ease-in;
+  /* visibility: hidden; */
 }
 
-[class^='main__hero-img-'] {
+.main__hero-img {
   border: 4px double var(--site-green-100);
 }
 
@@ -143,7 +153,6 @@
   max-width: 450px;
   position: relative;
   margin-left: -1em;
-  background-image: url('./../img/stained-glass-1.jpeg');
   background-position: center center;
   background-size: 800px 800px;
 }
@@ -160,7 +169,6 @@
 .main__hero-picture:nth-child(2) {
   background-color: orange;
   padding: 0em;
-  background-image: url('./../img/stained-glass-1.jpeg');
   background-size: 150px 150px;
   background-position: top right;
 }
@@ -170,14 +178,14 @@
   align-self: start;
   justify-self: end;
   max-width: 410px;
-  background-image: url('./../img/stained-glass-1.jpeg');
   background-size: 400px 400px;
 }
 
 /* Main Content Image */
 .intro__image,
 .intro__image img {
-  width: 300px;
+  width: 200px;
+  perspective: 1000,
 }
 
 .intro__image {
@@ -203,16 +211,16 @@
 
 .intro__image:after {
   background-color: var(--site-green-500);
-  left: -.4em;
-  top: -.45em;
+  left: var(--border-after-left);
+  top: var(--border-after-top);
   z-index: -1;
 }
 
 .intro__image:before {
   background-color: var(--site-green-100);
   z-index: -2;
-  left: -.8em;
-  top: -.9em;
+  left: var(--border-before-left);
+  top: var(--border-after-top);
 }
 
 .intro__image img {
@@ -225,8 +233,7 @@
 .intro__heading {
   color: var(--site-blue-color);
   font-style: italic;
-  font-size: clamp(45px, 4.75vw, 5rem);
-
+  font-size: clamp(43px, 4.75vw, 5rem);
 }
 
 .flower__separator {
@@ -245,6 +252,9 @@
 
 .intro__copy {
   font-weight: 100;
+  font-size: clamp(1em, 1.55vw, 1.45em);
+  line-height: 1.85em;
+
 }
 
 .intro__copy strong {

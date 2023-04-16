@@ -21,6 +21,12 @@
   color: var(--site-green-900) !important;
 }
 
+#hero__wrapper {
+  background: var(--site-green-500);
+  background: linear-gradient(0deg, var(--site-yellow-300) 28%, var(--site-green-700) 28%, var(--site-green-500) 28.3%);
+  visibility: hidden;
+}
+
 #main__hero {
   border-bottom: 2px solid var(--site-green-700);
 }
@@ -96,9 +102,10 @@
   display: block;
 }
 
-.main__hero-picture, [class^="main__hero-img-"] {
+.main__hero-picture, .main__hero-img {
   aspect-ratio: 11 / 12;
   object-fit: cover;
+  object-position: center center;
   border-radius: 1.5em;
   box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
 }
@@ -109,17 +116,16 @@
   max-width: 500px;
   border: 2px solid var(--site-green-900);
   background-blend-mode: hard-light;
-  transition: all .5s ease-in;
+  background-image: url("stained-glass-3.05162fc0.jpeg");
   box-shadow: 0 20px 30px -10px #c1c127;
 }
 
-[class^="main__hero-img-"] {
+.main__hero-img {
   border: 4px double var(--site-green-100);
 }
 
 .main__hero-picture:nth-child(1) {
   max-width: 450px;
-  background-image: url("stained-glass-1.5f7d8fa3.jpeg");
   background-position: center;
   background-size: 800px 800px;
   justify-self: start;
@@ -135,7 +141,6 @@
 
 .main__hero-picture:nth-child(2) {
   background-color: orange;
-  background-image: url("stained-glass-1.5f7d8fa3.jpeg");
   background-position: 100% 0;
   background-size: 150px 150px;
   padding: 0;
@@ -143,13 +148,13 @@
 
 .main__hero-picture:nth-child(3) {
   max-width: 410px;
-  background-image: url("stained-glass-1.5f7d8fa3.jpeg");
   background-size: 400px 400px;
   place-self: start end;
 }
 
 .intro__image, .intro__image img {
-  width: 300px;
+  width: 200px;
+  perspective: 1000, ;
 }
 
 .intro__image {
@@ -173,16 +178,16 @@
 
 .intro__image:after {
   background-color: var(--site-green-500);
+  left: var(--border-after-left);
+  top: var(--border-after-top);
   z-index: -1;
-  top: -.45em;
-  left: -.4em;
 }
 
 .intro__image:before {
   background-color: var(--site-green-100);
   z-index: -2;
-  top: -.9em;
-  left: -.8em;
+  left: var(--border-before-left);
+  top: var(--border-after-top);
 }
 
 .intro__image img {
@@ -193,7 +198,7 @@
 
 .intro__heading {
   color: var(--site-blue-color);
-  font-size: clamp(45px, 4.75vw, 5rem);
+  font-size: clamp(43px, 4.75vw, 5rem);
   font-style: italic;
 }
 
@@ -212,7 +217,9 @@
 }
 
 .intro__copy {
+  font-size: clamp(1em, 1.55vw, 1.45em);
   font-weight: 100;
+  line-height: 1.85em;
 }
 
 .intro__copy strong {

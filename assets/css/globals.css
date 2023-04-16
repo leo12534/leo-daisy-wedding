@@ -2,6 +2,11 @@
   --ff-logo: 'Alegreya SC', serif;
   --ff-heading: 'Playfair Display', serif;
   --ff-body: 'Montserrat', sans-serif;
+  /* Intro IMage Border pos*/
+  --border-after-left: -.4em;
+  --border-after-top: -.45em;
+  --border-before-left: -.8em;
+  --border-before-top: -.9em;
   /* Green Shades */
   --site-green-color: 170, 82%;
   --site-green-l: 100%;
@@ -28,13 +33,7 @@
       82%);
 }
 
-.invis {
-  visibility: hidden;
-}
 
-.vis {
-  visibility: visible;
-}
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -50,6 +49,7 @@
 */
 * {
   margin: 0;
+
 }
 
 /*
@@ -58,6 +58,7 @@
 html,
 body {
   height: 100%;
+  will-change: transform;
 }
 
 /*

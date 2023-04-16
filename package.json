@@ -2,7 +2,6 @@
   "name": "leo-daisy-wedding",
   "version": "1.0.0",
   "description": "",
-
   "scripts": {
     "start": "parcel serve --open chrome index.html --dist-dir main",
     "build": "parcel build --dist-dir main"
@@ -20,5 +19,6 @@
   "homepage": "https://github.com/leo12534/leo-daisy-wedding#readme",
   "devDependencies": {
     "parcel": "^2.8.3"
-  }
+  },
+  "dependencies": {}
 }
