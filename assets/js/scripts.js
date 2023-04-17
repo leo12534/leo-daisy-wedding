@@ -1,153 +1,121 @@
 gsap.registerPlugin(ScrollTrigger);
-let images = document.querySelectorAll(".main__hero-picture");
 
-function heroIntro() {
-  const tl = gsap
-    .timeline()
-    .fromTo('#hero__wrapper', {
-      opacity: 0,
-      scale: .2,
-      borderRadius: '50%',
-    },
-    {
-      opacity: 1,
-      scale:1,
-      duration:2,
-      ease:"back.out(1)",
-      borderRadius: '0%',
-      })
-    .to(images, {
-      x:200,
+var tl = gsap.timeline({ defaults: { opacity:0, ease: "back.out(1.7)" } });
+function init() {
+  tl.from(
+    "#hero__wrapper",
+    { autoAlpha: 0, scale: 0.8, y: 1000, duration: 0.5 },
+    ".25"
+  )
+    .from(".main__hero-picture", {
+      y: 500,
+      stagger: { each: 0.2, from: "random" },
     })
-  return tl
-}
+    .from(".ring__svg", {
+      opacity: 1,
+      autoAlpha: 0,
+      yPercent: -100,
+      ease: "bounce.out",
+      scale: 1.5,
+      duration: 1,
+    })
+    .from(
+      ".ring__svg",
+      {
+        opacity: 1,
+        rotate: -25,
+        repeat: 6,
+        yoyo: true,
+        duration: 0.1,
+      },
+      "<"
+    )
+    .from(".hero__heading", { x: 80, duration: 1 }, "<")
+    .from(".hero__venue", { x: -80, duration: 1 }, "<")
+    .from(".hero__dates", { yPercent: 20, ease: "elastic.out", scale: 0.5 })
+    .from(
+      ".std__svg",
+      {
+        scale: 0,
+        duration: 0.25,
+      },
+      "<1.5"
+    )
+    .from(".std-sparkles path", {
+      duration:.15,
+      yoyo: true,
+      stagger: {
+        amount:2,
+        from: 'random',
+        repeat: 10,
+        repeatDelay:1,
+        yoyo:true,
+      }
+    });
+};
 
+let images = document.querySelectorAll(".main__hero-picture");
+images.forEach((image) => {
 
-// function heroImgs() {
-//   images.forEach(function (img, index) {
-//     const tl = gsap
-//       .timeline()
-//       .to(img, {
-//         x:200,
-//       })
-// hero.add(heroImgs())
-//   })
-// }
-window.addEventListener('load', function (event) {
-const hero = gsap.timeline();
-hero.add(heroIntro())
-// hero.add(heroImgs())
+  let mainImg = image.querySelectorAll('.main__hero-img')
+  let tl = gsap.timeline().to(image, {
+    yPercent: gsap.utils.random(-20, 20),
+    scale: gsap.utils.random(1, 1.025),
+    padding: '0px',
+  })
+
+  ScrollTrigger.create({
+    trigger: "#hero__images",
+    start: "center center",
+    end: "bottom center",
+    scrub: 1,
+    toggleActions: "restart play pause resume reset",
+    animation:tl,
+  });
 })
 
-// hero.add(ringBounce())
-// hero.add(imgsScroll())
+// About Content Animation
 
-// OLD SHITTT
-
-// function ringBounce() {
-//   let tl = gsap.timeline()
-//   tl.from('.ring__svg', {
-//     opacity: 0,
-//     y: -200,
-//     ease: "bounce.out",
-//     scale: 1.5,
-//     duration: 1.2,
-//     delay:.8,
-//   }).fromTo(".ring__svg",
-//     {
-//       y: -2,
-//       ease: "ease.out",
-//       scale: 1.2,
-//       duration: 2,
+// const panelSlideIn = gsap.timeline({
+//   paused: true,
+//   defaults: { ease: "back" },
+//   scrollTrigger: {
+//     trigger: ".flower__separator",
+//     start: "top top",
+//     markers:true,
+//     onEnter: () => {
+//       panelSlideIn.play();
 //     },
-//     {
-//       rotate: -15,
-//       repeat: 4,
-//       yoyo:true,
-//       ease: "ease.in",
-//       duration:.2,
-//     }, ">-1");
-//   return tl
-// }
-
-// function imgsScroll() {
-//   let tl = gsap.timeline({
-//      scrollTrigger: {
-//           trigger: '#main__hero-images',
-//           start: '35% top',
-//           end: 'bottom top',
-//           markers:true,
-//           scrub: -5,
-//           toggleActions:'restart play pause resume reset'
-//         }
-//     });
-//   tl.to('.main__hero-picture', {
-//         yPercent: function(i, elem, boxes) {
-//           return i % 2 === 0 ? -25 : 5;
-//     },
-//         delay:gsap.utils.random(1,2),
-//         scale: gsap.utils.random(1, 1.015),
-//   })
-//   return tl
-// }
-
-
-
-
-// Fade in - Start TL
-
-
-// Ring Bounce
-
-
-// Images - Scroll Trigger
-// let images = gsap.utils.toArray(".main__hero-picture");
-// images.forEach((img) => {
-//   gsap.set(img, {
-//     y: 1000,
-
-//   })
-//   gsap.to(img, {
-//     delay:gsap.utils.random(.2, .6),
-//     y: 0,
-//     ease: "bounce.in",
-//   })
-//   gsap.to(img, {
-//     yPercent: gsap.utils.random(5, -25),
-//     scale: gsap.utils.random(1, 1.025),
-
-//     scrollTrigger: {
-//       trigger: img,
-//       start: '55% center',
-//       end: 'top center',
-//       scrub:-2,
-//       toggleActions:'restart play pause resume reset'
+//     onEnterBack: () => {
+//       panelSlideIn.reverse();
 //     }
-//   })
-// })
+// } });
+// panelSlideIn
+//   .from('.intro__image-wrapper', { autoAlpha: 0, scale: 0, y: 20, duration: 0.5 }, 0)
+//   .from('.intro__content-wrapper', { autoAlpha: 0, x: 50, duration: 0.34 }, 0.04)
 
 
-// STD Sign Shake
-// const std = gsap.timeline({ repeat: -1, repeatDelay:.2, delay:3});
-// std.to(".std__svg", {
-//   y: 8, duration: 0.7
-// }, "icon").to(".std__svg", {
-//   y: 0, duration: 0.7
-// }, "icon+=0.7");
+  // About Image Skew Hover
 
+// let introImageDiv = document.querySelector('.intro__image');
 
-// let stdSparkles = gsap.utils.toArray(".std-sparkles path");
-// stdSparkles.forEach((sparkle) => {
-//   let tl = gsap.timeline()
-//   tl.fromTo(sparkle, {
-//     autoAlpha: 0,
-//   }, {
-//     autoAlpha: 1,
-//     repeat: -1,
-//     yoyo: true,
-//     duration:.7,
-//     delay:gsap.utils.random(0, 1.5),
-//   })
-// })
+// introImageDiv.addEventListener("mousemove", function (e) {
+//   var width = introImageDiv.offsetWidth;
+//   var height = introImageDiv.offsetHeight;
 
+//   positionX = e.clientX / width - 0.55;
+//   positionY = e.clientY / height - 0.55;
 
+//   gsap.to(".intro__image", {
+//     rotationY: positionX * 15,
+//     rotationX: -positionY * 10,
+//     ease: "back",
+//   });
+//   gsap.from("html", {
+//     "--border-after-left": 0,
+//   });
+// });
+
+window.addEventListener("load", function (event) {
+  init(); // start hero animation
+});

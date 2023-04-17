@@ -2,11 +2,7 @@
   --ff-logo: 'Alegreya SC', serif;
   --ff-heading: 'Playfair Display', serif;
   --ff-body: 'Montserrat', sans-serif;
-  /* Intro IMage Border pos*/
-  --border-after-left: -.4em;
-  --border-after-top: -.45em;
-  --border-before-left: -.8em;
-  --border-before-top: -.9em;
+
   /* Green Shades */
   --site-green-color: 170, 82%;
   --site-green-l: 100%;
@@ -18,6 +14,7 @@
   /* Yellow Shades */
   --site-yellow-color: 56, 100%;
   --site-yellow-l: 100%;
+  --site-yellow-50: hsl(var(--site-yellow-color), calc(var(--site-yellow-l) - 5%));
   --site-yellow-100: hsl(var(--site-yellow-color), calc(var(--site-yellow-l) - 20%));
   --site-yellow-300: hsl(var(--site-yellow-color), calc(var(--site-yellow-l) - 31%));
   --site-yellow-500: hsl(var(--site-yellow-color), calc(var(--site-yellow-l) - 50%));

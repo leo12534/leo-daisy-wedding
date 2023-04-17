@@ -153,14 +153,13 @@
 }
 
 .intro__image, .intro__image img {
-  width: 200px;
+  width: 225px;
   perspective: 1000, ;
 }
 
 .intro__image {
   transition: all .15s ease-out;
   position: relative;
-  transform: translateZ(1px)rotate(-2deg);
 }
 
 .intro__image:hover {
@@ -178,16 +177,16 @@
 
 .intro__image:after {
   background-color: var(--site-green-500);
-  left: var(--border-after-left);
-  top: var(--border-after-top);
   z-index: -1;
+  top: -.45em;
+  left: -.4em;
 }
 
 .intro__image:before {
   background-color: var(--site-green-100);
   z-index: -2;
-  left: var(--border-before-left);
-  top: var(--border-after-top);
+  top: -.9em;
+  left: -.8em;
 }
 
 .intro__image img {
@@ -196,24 +195,21 @@
   padding: 5px;
 }
 
-.intro__heading {
+.heading {
   color: var(--site-blue-color);
   font-size: clamp(43px, 4.75vw, 5rem);
   font-style: italic;
+  line-height: 1.125em;
+}
+
+.heading span {
+  font-style: normal;
+  font-weight: 900;
 }
 
 .flower__separator {
   width: 60px;
   transform: rotate(-30deg);
-}
-
-.intro__heading {
-  line-height: 1.125em;
-}
-
-.intro__heading span {
-  font-style: normal;
-  font-weight: 900;
 }
 
 .intro__copy {
@@ -269,6 +265,10 @@
     width: 100%;
   }
 
+  .intro__image {
+    transform: translateZ(1px)rotate(-2deg);
+  }
+
   .intro__image:after {
     top: .45em;
     left: -.4em;
@@ -288,6 +288,38 @@
   .hero__dates span:nth-child(3) {
     display: block;
   }
+}
+
+#venue__map {
+  height: 550px;
+  width: 100%;
+  border-top: 2px solid var(--site-green-700) !important;
+  border-bottom: 2px solid var(--site-green-700) !important;
+}
+
+footer {
+  background-color: var(--site-yellow-50);
+  border-top: 3px solid var(--site-yellow-500);
+}
+
+.footer__svg {
+  width: 55px;
+  fill: var(--site-peach-color);
+}
+
+.footer__outro, .footer__credits {
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+.footer__outro {
+  font-family: var(--ff-logo);
+  font-size: .8em;
+}
+
+.footer__credits {
+  font-family: var(--ff-body);
+  font-size: .6em;
 }
 
 /*# sourceMappingURL=index.425f2d63.css.map */

@@ -9,9 +9,15 @@ body {
   height: 100vh;
   font-family: var(--ff-body);
   overflow-x: hidden;
-
 }
 
+main section {
+  min-height: 100vh;
+}
+
+main>section:first-child {
+  min-height: 130vh;
+}
 
 nav {
   display: block;
