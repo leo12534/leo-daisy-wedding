@@ -14,7 +14,7 @@ async function initMap() {
   map = new Map(document.getElementById("venue__map"), {
     zoom: 15,
     center: position,
-    // disableDefaultUI: true,
+    disableDefaultUI: true,
     mapId: "ac5600de404576a0",
 
   });
@@ -40,14 +40,6 @@ async function initMap() {
     map: map,
   });
 
-
-
-  // const marker = new AdvancedMarkerView({
-  //   map: map,
-  //   position: position,
-  //   title: "Sea Cliff Manor",
-  //   icon: "svgMarker",
-  // });
 
   // Center Change Stuff
     map.addListener("center_changed", () => {

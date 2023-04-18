@@ -136,7 +136,7 @@
   box-shadow: rgb(193, 193, 39) 0px 20px 30px -10px;
   border: 2px solid var(--site-green-900);
   background-blend-mode: hard-light;
-  /* visibility: hidden; */
+
 }
 
 .main__hero-img {
@@ -269,6 +269,60 @@
   color: var(--site-blue-color);
 }
 
+.venue__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.venue__img {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.venue__map {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.venue__content {
+  grid-area: 1 / 1 / 2 / 2;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 70%);
+}
+
+
+#venue__map {
+  /* height: 100%;
+  width: 100%; */
+}
+
+/* Footer */
+footer {
+  background-color: var(--site-yellow-50);
+  border-top: 3px solid var(--site-yellow-500);
+}
+
+.footer__svg {
+  width: 55px;
+  fill: var(--site-peach-color);
+}
+
+.footer__outro,
+.footer__credits {
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.footer__outro {
+  font-family: var(--ff-logo);
+  font-size: .8em;
+
+}
+
+.footer__credits {
+  font-family: var(--ff-body);
+  font-size: .6em;
+}
+
 @media (min-width: 768px) {
   .ring__svg {
     width: 80px;
@@ -281,11 +335,11 @@
   }
 
   .main__hero-picture {
-    padding: .5em;
+    padding: .25em;
   }
 
   .main__hero-picture:nth-child(2) {
-    padding: .95em;
+    padding: .5em;
   }
 
   .hero__dates {
@@ -317,6 +371,27 @@
     left: -.8em;
     top: .9em;
   }
+
+
+  .venue__section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .venue__img {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .venue__map {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+
+  .venue__content {
+    grid-area: 2 / 1 / 3 / 2;
+
+  }
+
+
 }
 
 
@@ -328,44 +403,4 @@
   .hero__dates span:nth-child(3) {
     display: block;
   }
-}
-
-
-
-#venue__map {
-  border-top: 2px solid var(--site-green-700) !important;
-  border-bottom: 2px solid var(--site-green-700) !important;
-  height: 550px;
-  width: 100%;
-
-}
-
-
-
-/* Footer */
-footer {
-  background-color: var(--site-yellow-50);
-  border-top: 3px solid var(--site-yellow-500);
-}
-
-.footer__svg {
-  width: 55px;
-  fill: var(--site-peach-color);
-}
-
-.footer__outro,
-.footer__credits {
-  font-weight: 100;
-  letter-spacing: 1px;
-}
-
-.footer__outro {
-  font-family: var(--ff-logo);
-  font-size: .8em;
-
-}
-
-.footer__credits {
-  font-family: var(--ff-body);
-  font-size: .6em;
 }

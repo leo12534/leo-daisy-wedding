@@ -59,7 +59,7 @@ images.forEach((image) => {
 
   let mainImg = image.querySelectorAll('.main__hero-img')
   let tl = gsap.timeline().to(image, {
-    yPercent: gsap.utils.random(-20, 20),
+    yPercent: gsap.utils.random(-20, 15),
     scale: gsap.utils.random(1, 1.025),
     padding: '0px',
   })
@@ -76,45 +76,28 @@ images.forEach((image) => {
 
 // About Content Animation
 
-// const panelSlideIn = gsap.timeline({
-//   paused: true,
-//   defaults: { ease: "back" },
-//   scrollTrigger: {
-//     trigger: ".flower__separator",
-//     start: "top top",
-//     markers:true,
-//     onEnter: () => {
-//       panelSlideIn.play();
-//     },
-//     onEnterBack: () => {
-//       panelSlideIn.reverse();
-//     }
-// } });
-// panelSlideIn
-//   .from('.intro__image-wrapper', { autoAlpha: 0, scale: 0, y: 20, duration: 0.5 }, 0)
-//   .from('.intro__content-wrapper', { autoAlpha: 0, x: 50, duration: 0.34 }, 0.04)
+const panelSlideIn = gsap.timeline({
+  paused: true,
+  defaults: { ease: "back" },
+  scrollTrigger: {
+    trigger: "#intro__section",
+    start: "top top",
+    end:"80% top",
+    // markers: true,
+    onEnter: () => {
+      panelSlideIn.play();
+    },
+    // onEnterBack: () => {
+    //   panelSlideIn.reverse();
+    // },
+  },
+});
+panelSlideIn
+  .from('.intro__trigger', {autoAlpha:0, scale:0,y :-20, duration:.2})
+  .from('.intro__image-wrapper', { autoAlpha: 0,  x: -200, duration: 0.8 }, 0)
+  .from('.intro__content-wrapper', { autoAlpha: 0, x: 50, duration: 0.55 }, 0.04)
 
 
-  // About Image Skew Hover
-
-// let introImageDiv = document.querySelector('.intro__image');
-
-// introImageDiv.addEventListener("mousemove", function (e) {
-//   var width = introImageDiv.offsetWidth;
-//   var height = introImageDiv.offsetHeight;
-
-//   positionX = e.clientX / width - 0.55;
-//   positionY = e.clientY / height - 0.55;
-
-//   gsap.to(".intro__image", {
-//     rotationY: positionX * 15,
-//     rotationX: -positionY * 10,
-//     ease: "back",
-//   });
-//   gsap.from("html", {
-//     "--border-after-left": 0,
-//   });
-// });
 
 window.addEventListener("load", function (event) {
   init(); // start hero animation
