@@ -12,7 +12,7 @@ async function initMap() {
 
   // The map, centered at Sea Cliff Manor
   map = new Map(document.getElementById("venue__map"), {
-    zoom: 15,
+    zoom: 14,
     center: position,
     disableDefaultUI: true,
     mapId: "ac5600de404576a0",

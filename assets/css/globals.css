@@ -3,6 +3,8 @@
   --ff-heading: 'Playfair Display', serif;
   --ff-body: 'Montserrat', sans-serif;
 
+  /* Section Paddings */
+  --venue-padding: 1.5em;
   /* Green Shades */
   --site-green-color: 170, 82%;
   --site-green-l: 100%;
@@ -10,7 +12,7 @@
   --site-green-300: hsl(var(--site-green-color), calc(var(--site-green-l) - 40%));
   --site-green-500: hsl(var(--site-green-color), calc(var(--site-green-l) - 52%));
   --site-green-700: hsl(var(--site-green-color), calc(var(--site-green-l) - 74%));
-  --site-green-900: hsl(var(--site-green-color), calc(var(--site-green-l) - 95%));
+  --site-green-900: hsl(var(--site-green-color), calc(var(--site-green-l) - 90%));
   /* Yellow Shades */
   --site-yellow-color: 56, 100%;
   --site-yellow-l: 100%;
@@ -31,6 +33,9 @@
 }
 
 
+.line {
+  border: 1px solid var(--site-green-700);
+}
 
 /*
   1. Use a more-intuitive box-sizing model.

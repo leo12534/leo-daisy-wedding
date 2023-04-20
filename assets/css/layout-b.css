@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: var(--site-yellow-50);
+  background-color: var(--site-yellow-300);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -11,7 +11,14 @@ body {
   overflow-x: hidden;
 }
 
+main section {
+  /* height: inherit; */
+  /* background-color: #FCFBFA; */
+}
 
+main>section:first-child {
+  /* min-height: 130vh; */
+}
 
 nav {
   display: block;
@@ -47,7 +54,7 @@ nav {
     "hero__images";
   grid-template-rows: min-content min-content 1fr;
   row-gap: 2em;
-  height: clamp(75vh, 75vw, 100vh);
+  /* height: 100vh; */
 
 }
 
@@ -66,40 +73,23 @@ nav {
   display: grid;
   flex-grow: 1;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: end;
-  justify-items: end;
+  align-items: center;
+  justify-items: center;
   column-gap: 1em;
   z-index: 999;
+
 }
 
-#hero__bottom-curve {
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  background-color: var(--site-yellow-50);
-  border-radius: 30px 30px 0 0;
-  z-index: 15;
-  border-top: 2px solid var(--site-green-700)
-}
 
+
+@media (min-width: 1200px) {
+  /* #hero__wrapper {
+    height: inherit;
+  } */
+}
 
 @media only screen and (min-width: 1024px) and (max-width: 1366px) and (min-height: 900px) {
   #hero__bottom-curve {
     border-radius: 30px 30px 0 0;
   }
-
-  #hero__images {
-    align-items: center;
-    justify-items: end;
-  }
-}
-
-
-@media (min-width: 768px) {
-  #hero__images {
-    align-items: center;
-    justify-items: center;
-  }
-
 }

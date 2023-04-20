@@ -1,0 +1,52 @@
+/* SVGs Styling */
+.ring__svg {
+  width: 65px;
+  filter: drop-shadow(2px 1px 2px var(--site-green-700));
+  margin: 0 auto;
+  stroke: var(--site-yellow-500);
+}
+
+.ring-dots {
+  fill: var(--site-yellow-300);
+}
+
+.ring-dashes {
+  fill: var(--site-yellow-300);
+}
+
+.ring-circle {
+  fill: var(--site-yellow-500);
+
+}
+
+.std__svg {
+  width: 50px;
+  left: .5em;
+  top: .5em;
+  filter: drop-shadow(3px 3px 0px var(--site-green-900));
+
+}
+
+.std-stroke {
+  fill: var(--site-yellow-500);
+}
+
+.std-text {
+  fill: var(--site-yellow-300);
+}
+
+.std-sparkles {
+  fill: var(--site-yellow-500);
+}
+
+@media (min-width: 768px) {
+  .ring__svg {
+    width: 80px;
+  }
+
+  .std__svg {
+    width: 100px;
+    left: 1em;
+    top: 1em;
+  }
+}
