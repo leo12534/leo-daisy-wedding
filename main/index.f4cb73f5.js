@@ -146,5 +146,6 @@ window.addEventListener("load", function(event) {
 window.addEventListener("resize", function(event) {
     introSectionTopPadding();
 });
+document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 //# sourceMappingURL=index.f4cb73f5.js.map

@@ -168,5 +168,8 @@ window.addEventListener("resize", function (event) {
   introSectionTopPadding()
 })
 
+document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+
 
 
