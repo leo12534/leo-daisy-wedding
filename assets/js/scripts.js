@@ -14,18 +14,6 @@ function init() {
       borderTopRightRadius: "0px",
       duration: 1,
     })
-    .from(".hero__heading", { y: 120, scale: 0, duration: 0.8 })
-    .from(".main__hero-picture", {
-      y: 500,
-      duration: 0.85,
-      stagger: { each: 0.2, from: "random" },
-    })
-    .from(".hero__dates", {
-      yPercent: 20,
-      ease: "elastic.out",
-      scale: 0.5,
-      duration: 1,
-    })
     .from(
       ".ring__svg",
       {
@@ -34,27 +22,43 @@ function init() {
         yPercent: -100,
         ease: "bounce.out",
         scale: 1.5,
-        duration: 1,
+        duration: 1.35,
       },
-      "<=1"
     )
     .from(
       ".ring__svg",
       {
         opacity: 1,
         rotate: -25,
-        repeat: 6,
+        repeat: 8,
         yoyo: true,
         duration: 0.1,
       },
       "<"
     )
-    .from(".hero__venue", { x: -80, duration: 1 }, "<")
-    .from('#intro__section', {
-      autoAlpha: 0,
-      yPercent: -20,
-      duration:.75,
-    }, '<')
+    .from(".hero__heading", { y: 120, scale: 0, duration: 0.8 })
+    .from(".main__hero-picture", {
+      y: 500,
+      duration: 0.95,
+      stagger: { each: 0.2, from: "random" },
+    })
+    .from(".hero__dates", {
+      yPercent: 20,
+      ease: "elastic.out",
+      scale: 0.5,
+      duration: 1,
+    })
+
+    .from(".hero__venue", { x: -80, duration: 1 })
+    .from(
+      "#intro__section",
+      {
+        autoAlpha: 0,
+        yPercent: -20,
+        duration: 0.75,
+      },
+      "<"
+    );
 
 };
 

@@ -16,13 +16,26 @@ function init() {
         borderTopLeftRadius: "0px",
         borderTopRightRadius: "0px",
         duration: 1
-    }).from(".hero__heading", {
+    }).from(".ring__svg", {
+        opacity: 1,
+        autoAlpha: 0,
+        yPercent: -100,
+        ease: "bounce.out",
+        scale: 1.5,
+        duration: 1.35
+    }).from(".ring__svg", {
+        opacity: 1,
+        rotate: -25,
+        repeat: 8,
+        yoyo: true,
+        duration: 0.1
+    }, "<").from(".hero__heading", {
         y: 120,
         scale: 0,
         duration: 0.8
     }).from(".main__hero-picture", {
         y: 500,
-        duration: 0.85,
+        duration: 0.95,
         stagger: {
             each: 0.2,
             from: "random"
@@ -32,26 +45,13 @@ function init() {
         ease: "elastic.out",
         scale: 0.5,
         duration: 1
-    }).from(".ring__svg", {
-        opacity: 1,
-        autoAlpha: 0,
-        yPercent: -100,
-        ease: "bounce.out",
-        scale: 1.5,
-        duration: 1
-    }, "<=1").from(".ring__svg", {
-        opacity: 1,
-        rotate: -25,
-        repeat: 6,
-        yoyo: true,
-        duration: 0.1
-    }, "<").from(".hero__venue", {
+    }).from(".hero__venue", {
         x: -80,
         duration: 1
-    }, "<").from("#intro__section", {
+    }).from("#intro__section", {
         autoAlpha: 0,
         yPercent: -20,
-        duration: .75
+        duration: 0.75
     }, "<");
 }
 // Images Move On Scroll
