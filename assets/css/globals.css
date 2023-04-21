@@ -37,6 +37,21 @@
   border: 1px solid var(--site-green-700);
 }
 
+.btn-event {
+  background-color: #fd7d00;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+.btn-event:hover {
+  background-color: #fd6500;
+  color: #fff;
+
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */

@@ -14,9 +14,9 @@ async function initMap() {
   map = new Map(document.getElementById("venue__map"), {
     zoom: 14,
     center: position,
-    disableDefaultUI: true,
+    disableDefaultUI: false,
+    mapTypeControl: false,
     mapId: "ac5600de404576a0",
-
   });
 
 
@@ -42,13 +42,13 @@ async function initMap() {
 
 
   // Center Change Stuff
-    map.addListener("center_changed", () => {
-      // 3 seconds after the center of the map has changed, pan back to the
-      // marker.
-      window.setTimeout(() => {
-        map.panTo(position);
-      }, 3000);
-    });
+    // map.addListener("center_changed", () => {
+    //   // 3 seconds after the center of the map has changed, pan back to the
+    //   // marker.
+    //   window.setTimeout(() => {
+    //     map.panTo(position);
+    //   }, 10000);
+    // });
 
 
   //

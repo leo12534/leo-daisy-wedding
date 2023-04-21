@@ -37,7 +37,7 @@ nav {
 #hero__wrapper {
   height: clamp(75vh, 75vw, 100vh);
   flex-grow: 1;
-  grid-template-rows: min-content min-content 1fr;
+  grid-template-rows: 100px 1fr min-content;
   grid-template-areas: "hero__navbar"
                        "hero__copy"
                        "hero__images";
@@ -72,6 +72,12 @@ nav {
   position: absolute;
   bottom: -5px;
   left: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 992px) and (max-height: 450px) and (orientation: landscape) {
+  #hero__wrapper {
+    height: clamp(75vh, 100vw, 195vh);
+  }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1366px) and (min-height: 900px) {

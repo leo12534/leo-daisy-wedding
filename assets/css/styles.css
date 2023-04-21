@@ -1,3 +1,33 @@
+.modal-content {
+  background-color: var(--site-yellow-500);
+  border: 5px solid var(--site-yellow-100);
+}
+
+.modal-header {
+  border-bottom: .75px solid var(--site-green-900);
+
+}
+
+.modal-title {
+  font-size: 1.45em;
+  font-weight: bold;
+  color: var(--site-green-900);
+}
+
+.modal-body p {
+  color: var(--site-green-900);
+  font-size: 1.3em;
+  line-height: 1.35em;
+  letter-spacing: .75px;
+  text-align: center;
+}
+
+.modal-footer {
+  border-top: .75px solid var(--site-green-900);
+}
+
+/*  */
+
 #hero__navbar nav {
   background-color: var(--site-green-300);
   border-bottom: 1px solid var(--site-green-900)
@@ -211,8 +241,6 @@
 }
 
 /* Venue Section */
-
-
 .venue__grid-column {
   padding-right: var(--venue-padding);
   padding-left: var(--venue-padding);
@@ -275,11 +303,6 @@
   font-size: clamp(30px, 6vw, 3rem);
 }
 
-
-
-
-
-
 /* Footer */
 footer {
   background-color: var(--site-yellow-100);
@@ -308,12 +331,12 @@ footer {
   font-size: .6em;
 }
 
+
+
 @media (min-width: 768px) {
   :root {
     --venue-padding: 3.1em;
   }
-
-
 
   .main__hero-picture {
     padding: .25em;

@@ -25,6 +25,20 @@
   border: 1px solid var(--site-green-700);
 }
 
+.btn-event {
+  color: #fff;
+  letter-spacing: 1px;
+  background-color: #fd7d00;
+  border-radius: 30px;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+.btn-event:hover {
+  color: #fff;
+  background-color: #fd6500;
+}
+
 *, :before, :after {
   box-sizing: border-box;
 }
