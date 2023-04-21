@@ -75,6 +75,17 @@
 /*
   3. Allow percentage-based heights in the application
 */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+main {
+  display: block;
+}
+
 html,
 body {
   height: 100%;
