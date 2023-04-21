@@ -13,11 +13,20 @@
   fill: var(--site-yellow-500);
 }
 
-.std__svg {
+.svg__flower {
   width: 50px;
+  z-index: -999;
+  opacity: 1;
+  top: -.5em;
+  right: 1%;
+  transform: rotate(-25deg);
+}
+
+.std__svg {
+  width: 75px;
   filter: drop-shadow(3px 3px 0px var(--site-green-900));
-  top: .5em;
-  left: .5em;
+  top: 1em;
+  right: 1em;
 }
 
 .std-stroke {
@@ -32,15 +41,38 @@
   fill: var(--site-yellow-500);
 }
 
+.svg__footer {
+  width: 70px;
+}
+
+.svg__footer .frame, .svg__footer .text {
+  fill: var(--site-green-900);
+}
+
+.svg__footer .heart {
+  fill: #f54133;
+}
+
 @media (min-width: 768px) {
   .ring__svg {
     width: 80px;
   }
 
+  .svg__flower {
+    top: -.5em;
+    right: 25%;
+  }
+
   .std__svg {
     width: 100px;
-    top: 1em;
-    left: 1em;
+    top: 2em;
+    right: 2em;
+  }
+}
+
+@media (min-width: 992px) {
+  .std__svg {
+    width: 125px;
   }
 }
 

@@ -2,23 +2,42 @@ gsap.registerPlugin(ScrollTrigger);
 
 var tl = gsap.timeline({ defaults: { opacity:0, ease: "back.out(1.7)" } });
 function init() {
+
   tl.from(
     "#hero__wrapper",
-    { autoAlpha: 0, scale: 0.8, y: 1000, duration: 0.5 },
-    ".25"
+    { autoAlpha: 0, scale: 0.5, y: 1000, duration: 0.5 },
+    ".2"
   )
-    .from(".main__hero-picture", {
-      y: 500,
-      stagger: { each: 0.2, from: "random" },
-    })
-    .from(".ring__svg", {
-      opacity: 1,
-      autoAlpha: 0,
-      yPercent: -100,
-      ease: "bounce.out",
-      scale: 1.5,
+    .from("#hero__bottom-curve", {
+      autoAlpha: 1,
+      borderTopLeftRadius: "0px",
+      borderTopRightRadius: "0px",
       duration: 1,
     })
+    .from(".hero__heading", { y: 120, scale: 0, duration: 0.8 })
+    .from(".main__hero-picture", {
+      y: 500,
+      duration: 0.85,
+      stagger: { each: 0.2, from: "random" },
+    })
+    .from(".hero__dates", {
+      yPercent: 20,
+      ease: "elastic.out",
+      scale: 0.5,
+      duration: 1,
+    })
+    .from(
+      ".ring__svg",
+      {
+        opacity: 1,
+        autoAlpha: 0,
+        yPercent: -100,
+        ease: "bounce.out",
+        scale: 1.5,
+        duration: 1,
+      },
+      "<=1"
+    )
     .from(
       ".ring__svg",
       {
@@ -30,33 +49,19 @@ function init() {
       },
       "<"
     )
-    .from(".hero__heading", { x: 80, duration: 1 }, "<")
     .from(".hero__venue", { x: -80, duration: 1 }, "<")
-    .from(".hero__dates", { yPercent: 20, ease: "elastic.out", scale: 0.5 })
-    .from(
-      ".std__svg",
-      {
-        scale: 0,
-        duration: 0.25,
-      },
-      "<1.5"
-    )
-    .from(".std-sparkles path", {
-      duration:.15,
-      yoyo: true,
-      stagger: {
-        amount:2,
-        from: 'random',
-        repeat: 10,
-        repeatDelay:1,
-        yoyo:true,
-      }
-    })
-  // .to('#intro__section', {
-  //     autoAlpha:1,
-  // })
+    .from('#intro__section', {
+      autoAlpha: 0,
+      yPercent: -20,
+      duration:.75,
+    }, '<')
+
 };
 
+
+
+
+// Images Move On Scroll
 let images = document.querySelectorAll(".main__hero-picture");
 images.forEach((image) => {
   let mainImg = image.querySelectorAll('.main__hero-img')
@@ -76,38 +81,54 @@ images.forEach((image) => {
   });
 })
 
-// About Content Animation
+// Make Images Move Slowly and stuff
+let floatingImages = document.querySelectorAll("#intro__section img");
+let container = document.querySelector("#intro__section");
+let client = container.getBoundingClientRect();
 
-// const panelSlideIn = gsap.timeline({
-//   paused: true,
-//   defaults: { ease: "back" },
-//   scrollTrigger: {
-//     trigger: "#intro__section",
-//     start: "top top",
-//     end:"80% top",
-//     markers: true,
-//     onEnter: () => {
-//       panelSlideIn.play();
-//     },
-//     onEnterBack: () => {
-//       panelSlideIn.reverse();
-//     },
-//   },
-// });
-// panelSlideIn
-//   .from('.intro__trigger', {autoAlpha:0, scale:0,y :-20, duration:.2})
-//   .from('.intro__image-wrapper', { autoAlpha: 0,  x: -200, duration: 0.8 }, 0)
-//   .from('.intro__content-wrapper', { autoAlpha: 0, x: 50, duration: 0.55 }, 0.04)
+container.addEventListener("mousemove", (e) => {
+  let clientY = client.y;
+  let mouseX = e.x;
+  let mouseY = Math.abs(e.y - clientY);
+  let hh = window.innerHeight;
+  let ww = window.innerWidth;
 
-
-
-window.addEventListener("load", function (event) {
-  introSectionTopPadding();
-  init(); // start hero animation
+  floatingImages.forEach((img) => {
+    let direction = img.dataset.direction;
+    let multiplier = img.dataset.multiplier;
+    let tx = direction == "right" ? -1 : 1;
+    gsap.to(img, {
+      duration: 3,
+      ease: "back.out",
+      x: ((tx * (mouseX - ww / 2)) / multiplier) * 2,
+      y: (tx * (mouseY - hh / 2)) / multiplier,
+    });
+  });
 });
-window.addEventListener("resize", function (event) {
-  introSectionTopPadding()
-})
+
+// Footer Hearth Pulse
+
+let heartPulse = gsap.timeline({
+  defaults: {
+    transformOrigin: "50% 50%",
+    ease: "back",
+  },
+});
+heartPulse
+  .to(".svg__footer .heart", {
+    scale: 1.25,
+    y: 3,
+    repeat: -1,
+    yoyo: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: "main",
+    start: '80% center',
+    end:'82% center',
+    toggleActions: "restart play pause resume reset",
+    animation: heartPulse,
+  });
 
 function introSectionTopPadding(e) {
   var xSmall = window.matchMedia("(max-width: 767.98px)");
@@ -118,24 +139,34 @@ function introSectionTopPadding(e) {
   const middleHeroImgHeight = middleHeroImg.offsetHeight.toString();
   let introSection = document.querySelector("#intro__section");
   if (xSmall.matches) {
-    introSection.style.paddingTop = `${middleHeroImgHeight / 6}px`; // Set Padding depening on size of intro section
-    introSection.style.paddingBottom = `${middleHeroImgHeight / 12}px`; // Set Padding depening on size of intro section
-
-  }  else if (xMedium.matches) {
-    introSection.style.paddingTop = `${middleHeroImgHeight / 4}px`; // Set Padding depening on size of intro section
-    introSection.style.paddingBottom = `${middleHeroImgHeight / 8}px`; // Set Padding depening on size of intro section
-
-  }  else if (xLarge.matches) {
-    introSection.style.paddingTop = `${middleHeroImgHeight / 3}px`; // Set Padding depening on size of intro section
-    introSection.style.paddingBottom = `${middleHeroImgHeight / 6}px`; // Set Padding depening on size of intro section
-
+    introSection.style.paddingTop = `${middleHeroImgHeight / 3.75}px`;
+    introSection.style.paddingBottom = `${middleHeroImgHeight / 7.75}px`;
+  } else if (xMedium.matches) {
+    introSection.style.paddingTop = `${middleHeroImgHeight / 2.75}px`;
+    introSection.style.paddingBottom = `${middleHeroImgHeight / 5.75}px`;
+  } else if (xLarge.matches) {
+    introSection.style.paddingTop = `${middleHeroImgHeight / 3}px`;
+    introSection.style.paddingBottom = `${middleHeroImgHeight / 6}px`;
   } else if (xxLarge.matches) {
-    introSection.style.paddingTop = `${middleHeroImgHeight / 3}px`; // Set Padding depening on size of intro section
-    introSection.style.paddingBottom = `${middleHeroImgHeight / 6}px`; // Set Padding depening on size of intro section
-
-  }
-  else {
-    introSection.style.paddingTop = `${middleHeroImgHeight / 2}px`; // Set Padding depening on size of intro section
-    introSection.style.paddingBottom = `${middleHeroImgHeight / 4}px`; // Set Padding depening on size of intro section
+    introSection.style.paddingTop = `${middleHeroImgHeight / 3}px`;
+    introSection.style.paddingBottom = `${middleHeroImgHeight / 6}px`;
+  } else {
+    introSection.style.paddingTop = `${middleHeroImgHeight / 2}px`;
+    introSection.style.paddingBottom = `${middleHeroImgHeight / 4}px`;
   }
 }
+
+
+
+
+
+window.addEventListener("load", function (event) {
+  introSectionTopPadding();
+  init();
+});
+window.addEventListener("resize", function (event) {
+  introSectionTopPadding()
+})
+
+
+

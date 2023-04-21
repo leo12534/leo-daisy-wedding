@@ -42,8 +42,8 @@
 }
 
 .navbar-toggler {
-  border: 3px solid var(--site-blue-color);
   box-shadow: none;
+  border: none;
   border-radius: 20px;
 }
 
@@ -52,19 +52,33 @@
   transition: all .2s ease-out;
 }
 
-.navbar-toggler-icon:hover, .navbar-toggler:focus .navbar-toggler-icon {
+.navbar-toggler-icon:hover {
   background-image: var(--navbar-toggler-icon-bg-hover);
 }
 
-.navbar-toggler:focus .navbar-nav li a {
+.navbar-toggler[aria-expanded="true"] {
+  border: 3px solid var(--site-blue-color);
+}
+
+.navbar-toggler:focus .navbar-toggler-icon {
+  background-image: var(--navbar-toggler-icon-bg-hover);
+}
+
+.navbar-nav li a {
   text-transform: uppercase;
   letter-spacing: 1.25px;
   color: var(--site-green-700);
-  text-shadow: 2px 2px 0px var(--site-green-100);
+  text-shadow: 1px 1px 0px var(--site-green-100);
   border-bottom: 1px solid var(--site-green-500);
+  text-decoration-line: none;
+  -webkit-text-decoration-style: none;
+  text-decoration-style: none;
+  text-decoration-color: #0000;
+  text-decoration-thickness: none;
   padding: 1em 0;
   font-size: .85em;
   font-weight: 600;
+  transition: all .35s ease-in;
 }
 
 .navbar-nav li:last-child a {
@@ -72,8 +86,15 @@
 }
 
 .navbar-nav li a:hover {
-  color: var(--site-green-900);
-  text-shadow: 0 0 1px;
+  color: var(--site-blue-color);
+  text-shadow: 0 0 .5px;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  -webkit-text-decoration-color: var(--site-blue-color);
+  text-decoration-color: var(--site-blue-color);
+  text-decoration-thickness: 1.5px;
+  transition: all .5s ease-in;
+  transform: translateY(-2.5px);
 }
 
 .navbar-nav li a.active {
@@ -184,6 +205,10 @@
   font-weight: 900;
 }
 
+#intro__section {
+  visibility: hidden;
+}
+
 .intro__copy-alt {
   color: var(--site-green-900);
   font-size: clamp(1.3em, 1.75vw, 2.5em);
@@ -235,7 +260,7 @@
 .venue__grid {
   border-left: 2px solid var(--site-green-700);
   border-right: 2px solid var(--site-green-700);
-  grid-template-rows: .2fr .7fr 1fr;
+  grid-template-rows: .2fr .8fr 1fr;
   grid-template-columns: 1fr;
   display: grid;
 }
@@ -283,7 +308,7 @@
 }
 
 .venue__side-content-heading {
-  font-size: clamp(30px, 6vw, 3rem);
+  font-size: clamp(20px, 5vw, 2.5rem);
 }
 
 footer {
