@@ -165,7 +165,6 @@ function introSectionTopPadding(e) {
 
 
 window.addEventListener("load", function (event) {
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
   introSectionTopPadding();
   init();
 });
@@ -178,3 +177,4 @@ window.addEventListener("resize", function (event) {
 
 
 
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
