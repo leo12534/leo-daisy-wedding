@@ -12,7 +12,7 @@ function init() {
       autoAlpha: 1,
       borderTopLeftRadius: "0px",
       borderTopRightRadius: "0px",
-      duration: 1,
+      duration: 1.15,
     })
     .from(
       ".ring__svg",
@@ -22,7 +22,7 @@ function init() {
         yPercent: -100,
         ease: "bounce.out",
         scale: 1.5,
-        duration: 1.35,
+        duration: .85,
       },
     )
     .from(
@@ -165,6 +165,7 @@ function introSectionTopPadding(e) {
 
 
 window.addEventListener("load", function (event) {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
   introSectionTopPadding();
   init();
 });
@@ -172,7 +173,7 @@ window.addEventListener("resize", function (event) {
   introSectionTopPadding()
 })
 
-document.body.scrollTop = document.documentElement.scrollTop = 0;
+
 
 
 
