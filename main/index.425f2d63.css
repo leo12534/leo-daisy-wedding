@@ -60,7 +60,7 @@
   border: 3px solid var(--site-blue-color);
 }
 
-.navbar-toggler:focus .navbar-toggler-icon {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon, .navbar-toggler:focus .navbar-toggler-icon {
   background-image: var(--navbar-toggler-icon-bg-hover);
 }
 
