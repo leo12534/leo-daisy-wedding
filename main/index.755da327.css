@@ -28,12 +28,14 @@
 }
 
 .btn-event {
-  color: #fff;
   letter-spacing: 1px;
-  background-color: #fd7d00;
+  background-color: #e06500;
   border-radius: 30px;
   padding-left: 1.25em;
   padding-right: 1.25em;
+  color: #fff !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
 }
 
 .btn-event:hover {

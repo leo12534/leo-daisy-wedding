@@ -41,12 +41,15 @@
 }
 
 .btn-event {
-  background-color: #fd7d00;
-  color: #fff;
+  background-color: #e06500;
+  color: #fff !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
   letter-spacing: 1px;
   border-radius: 30px;
   padding-left: 1.25em;
   padding-right: 1.25em;
+
 }
 
 .btn-event:hover {
