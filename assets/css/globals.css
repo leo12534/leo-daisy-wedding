@@ -5,6 +5,10 @@
   --ff-logo: 'Alegreya SC', serif;
   --ff-heading: 'Playfair Display', serif;
   --ff-body: 'Montserrat', sans-serif;
+  --fw-500: 500;
+  --fw-700: 700;
+
+
 
   /* Section Paddings */
   --venue-padding: 1.5em;
@@ -35,9 +39,41 @@
       82%);
 }
 
+/* Font Weight Global Classes */
+
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+/* Font Family Global Classes */
+
+.text-blue {
+  color: var(--site-blue-color);
+}
+
+.text-yellow {
+  color: var(--site-yellow-500);
+}
+
+.text-green {
+  color: var(--site-green-700);
+}
+
+
 
 .line {
   border: 1px solid var(--site-green-700);
+}
+
+.map {
+  min-height: 95%;
+  min-width: 95%;
+  border: 1px solid var(--site-green-900);
+  border-radius: 20px;
 }
 
 .btn-event {

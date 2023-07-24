@@ -107,6 +107,11 @@
   visibility: hidden;
 }
 
+#inner__hero-wrapper {
+  background-color: var(--site-green-500);
+  border-bottom: 2px solid var(--site-green-700);
+}
+
 .hero__heading {
   color: var(--site-yellow-300);
   text-shadow: 2px 4px 0px var(--site-green-700);
@@ -295,13 +300,6 @@
   grid-area: 2 / 1 / 3 / 2;
 }
 
-.venue__map {
-  min-height: 95%;
-  min-width: 95%;
-  border: 1px solid var(--site-green-900);
-  border-radius: 20px;
-}
-
 .venue__side-content {
   border-top: 2px solid var(--site-green-700);
   grid-area: 3 / 1 / 4 / 2;
@@ -334,6 +332,12 @@ footer {
 .footer__credits {
   font-family: var(--ff-body);
   font-size: .6em;
+}
+
+.hilton__map {
+  min-height: 350px;
+  height: 97%;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
